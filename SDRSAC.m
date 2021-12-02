@@ -83,6 +83,6 @@ function [out] = SDRSAC(M, B, config)
     out.iter = iter;    
     out.R = bestR;
     out.T = bestT;    
-    plotPointClouds(B, bestR*M + bestT, 'b.','r.')
+   % plotPointClouds(B, bestR*M + bestT, 'b.','r.')
 end 
     
