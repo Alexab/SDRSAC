@@ -42,8 +42,7 @@
 %%                PUX     : max(0,max(X-U))
 %%                termcode: termination code 
 %%                          (0 : problem is solved to required tolerance, tol)
-%%                          (-1: problem is partially solved to the required tolerance
-%%                               with pinfeas < sqrt(tol) and dinfeas < tol)
+%%                          (-1: problem is partially solved to the required tolerance)
 %%                          ( 1: problem is not solved successful due to stagnation) 
 %%                          ( 2: maximum number of iterations reached)
 %%        runhist = a structure array containing the history of the run.

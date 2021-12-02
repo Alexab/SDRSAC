@@ -345,7 +345,9 @@
       end       
    end   
    if isfield(OPTIONS,'ADMmaxiter'); ADMmaxiter = OPTIONS.ADMmaxiter; end
-   if isfield(OPTIONS,'ADMtol'); ADMtol = OPTIONS.ADMtol; end   
+   if isfield(OPTIONS,'maxiterADM'); ADMmaxiter = OPTIONS.maxiterADM; end  
+   if isfield(OPTIONS,'ADMtol'); ADMtol = OPTIONS.ADMtol; end
+   if isfield(OPTIONS,'tolADM'); ADMtol = OPTIONS.tolADM; end   
    par.maxiter = ADMmaxiter; 
    par.stoptol = ADMtol;
    if (true)

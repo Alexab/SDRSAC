@@ -19,7 +19,7 @@
      model.add_variable(X);
      model.maximize(sum(X));
      model.add_affine_constraint(trace(X) == 1);
-     options=2; 
+     options=1; 
      if (options==1)
         model.add_affine_constraint(X(IE,JE) == 0);
         model.add_affine_constraint(X >= 0);

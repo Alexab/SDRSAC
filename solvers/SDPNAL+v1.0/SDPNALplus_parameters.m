@@ -13,8 +13,8 @@
   OPTIONS.tol        = 1e-6;  %accuracy tolerance for solving the SDP problem
   OPTIONS.maxiter    = 20000; %maximum number of outer iteration 
   OPTIONS.maxtime    = 10000; %maximum time allowed in seconds
-  OPTIONS.tolADM     = 1e-4;  %%accuracry tolerance for using ADMM+ in Phase I of the algorithm
-  OPTIONS.maxiterADM = 200;   %%maximum number of ADMM+ iterations to use in Phase I of the algorithm
+  OPTIONS.ADMtol     = 1e-4;  %%accuracry tolerance for using ADMM+ in Phase I of the algorithm
+  OPTIONS.ADMmaxiter = 200;   %%maximum number of ADMM+ iterations to use in Phase I of the algorithm
   
   OPTIONS.stopoption = 1;     %(default) to terminate the solver when stagnation happens;
  %OPTIONS.stopoption = 0;     %otherwise.  

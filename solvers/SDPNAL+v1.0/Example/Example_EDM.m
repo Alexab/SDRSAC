@@ -26,5 +26,5 @@ model = ccp_model('Example_EDM');
     model.add_affine_constraint(Y(ID,ID)+Y(JD,JD)-Y(ID,JD)-Y(JD,ID) - X1 + X2 == dd);
     model.add_affine_constraint(sum(Y) == 0);
     model.setparameter('tol', 1e-4, 'maxiter', 2000);
-model.solve; 
+model.solve;
 %%*********************************************************************
