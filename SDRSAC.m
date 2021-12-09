@@ -26,15 +26,14 @@ function [out] = SDRSAC(M, B, config)
     
     % Start the sampling iterations
     stop = false;
-    while (iter < config.maxIter && ~stop)        
-        
+    while (iter < config.maxIter && ~stop)               
         idxM = randsample(size(M,2), n);
         m = M(:, idxM);       
         B_to_sample = B;
         scount = 0;
         while (size(B_to_sample,2) > n*2 && scount < 2)
             scount = scount + 1;
-            fprintf('Current B size: %d\n', size(B_to_sample,2));
+%            fprintf('Current B size: %d\n', size(B_to_sample,2));
             
             idxB = randsample(size(B_to_sample,2), n);                    
             b = B_to_sample(:, idxB);                        
@@ -44,6 +43,7 @@ function [out] = SDRSAC(M, B, config)
             [Rs,ts, ~, corrB] = sdpReg(m, b, config);
 
             if ~isempty(corrB)
+                fprintf('Iteration: %d of %d\n', iter+1, config.maxIter);
                 TM = Rs*M + repmat(ts, 1, size(M,2));
                
                 
@@ -58,7 +58,6 @@ function [out] = SDRSAC(M, B, config)
                     bestT = Ricp*ts + Ticp;  
                                        
                     fprintf('Best-so-far consensus size: %d\n', maxInls);%
-                    fprintf('--------------');
                     
                     % For debugging purpose:
                      %close all; plotPointClouds(B, TMICP, 'b.','r.');

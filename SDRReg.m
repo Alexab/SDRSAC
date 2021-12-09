@@ -31,7 +31,7 @@ function [out] = SDRReg(M, B, config)
     PInls = zeros( config.innerIter,1);   PTime = zeros(config.innerIter, 1);
 
     % Start sampling
-    while (iter < config.maxIter&& ~stop)        
+    while (iter < config.maxIter&& ~stop)  
         tic;        
         idxBPool = []; idxM = [];                
         for sp = 1:config.kSample       

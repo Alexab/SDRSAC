@@ -33,9 +33,12 @@ if (out.inls>0)
         end
         output_matrix(i,4) = out.T(i);
     end
-    output_matrix(4,4)=1.0
+    output_matrix(4,4)=1.0;
 end
 
-writematrix(output_matrix, "./data/output.txt",'Delimiter','tab');
+file_id=fopen("./data/output.txt", 'w');
+fprintf(file_id,"%d\n", out.iter);
+fclose(file_id);
+writematrix(output_matrix, "./data/output.txt",'Delimiter','tab', 'WriteMode', 'append');
 
-disp(out);
+%disp(out);
